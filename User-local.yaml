@@ -1,0 +1,23 @@
+spring:  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gezi-rehber-user-db
+    username: postgres
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8082
