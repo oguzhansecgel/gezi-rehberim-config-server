@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: Place
+            uri: lb://place
+            predicates:
+              - Path=/api/place/**          
+          - id: eureka
+            uri: http://localhost:8888
+            predicates:
+                - Path=/eureka/web
+            filters:
+                - SetPath=/
+          - id: eureka-static
+            uri: http://localhost:8888
+            predicates:
+                - Path=/eureka/**
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+    registerWithEureka: true
+    fetchRegistry: true
+
