@@ -5,6 +5,13 @@ spring:
       group-id: kafka-group
     template:
       default-topic: kafka-topic
+  elasticsearch:
+    rest:
+      uris: http://localhost:9200
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
 
 eureka:
   client:
