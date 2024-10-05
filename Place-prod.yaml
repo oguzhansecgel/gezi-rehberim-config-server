@@ -1,0 +1,26 @@
+spring:  
+  datasource:
+    url: jdbc:postgresql://place-db:5432/place-service
+    username: postgres
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8888/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8081
