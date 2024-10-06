@@ -15,7 +15,7 @@ spring:
       max-file-size: 1100MB
       max-request-size: 1100MB
   kafka:
-    bootstrap-servers: localhost:9092  
+    bootstrap-servers: kafka:9093
     template:
       default-topic: kafka-topic
 eureka:
