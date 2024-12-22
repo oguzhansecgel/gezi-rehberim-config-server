@@ -1,15 +1,4 @@
 spring:
-  application:
-    name: Place
-  cloud:
-    config:
-      profile: prod
-  config:
-    import: "configserver:http://config-server:8888"
-  kafka:
-    bootstrap-servers: kafka:9093
-    template:
-      default-topic: kafka-topic
   datasource:
     url: jdbc:postgresql://place-db:5432/place-service
     username: postgres
@@ -25,12 +14,16 @@ spring:
       enabled: true
       max-file-size: 1100MB
       max-request-size: 1100MB
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://discovery-server:8888/eureka/
-      register-with-eureka: true
-      fetch-registry: true
+  kafka:
+    bootstrap-servers: kafka:9093
+    template:
+      default-topic: kafka-topic
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-server:8888/eureka/
+    register-with-eureka: true
+    fetch-registry: true
 management:
   endpoints:
     web:
