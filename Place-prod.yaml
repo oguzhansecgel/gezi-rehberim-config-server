@@ -28,9 +28,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,prometheus
+        include: health,info
   endpoint:
-    prometheus:
-      enabled: true
+    health:
+      show-details: always
+
 server:
   port: 8081
